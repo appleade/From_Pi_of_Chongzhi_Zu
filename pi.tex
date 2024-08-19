@@ -1,0 +1,296 @@
+% -*- coding: utf-8 -*-
+\documentclass{ctexart}
+\usepackage{amsmath, amssymb, amsthm, bm, ulem, hyperref, graphicx}
+\usepackage{paracol}
+\usepackage[margin = 1 in]{geometry}
+
+\usepackage{tipa}
+\makeatletter
+\newcommand{\cemph}[1]{\@tfor\i:=#1\do{\textsubdot{\i}}}
+\makeatother
+
+\title{从祖冲之的圆周率谈起（节选）}
+\author{华罗庚}
+%\date{1964年2月}
+\date{}
+
+\newtheorem{theorem}{\indent 定理}[section]
+\newtheorem{lemma}[theorem]{\indent 引理}
+\newtheorem{proposition}[theorem]{\indent 命题}
+\newtheorem{corollary}[theorem]{\indent 推论}
+\newtheorem{definition}{\indent 定义}[section]
+\newtheorem{example}{\indent 例}[section]
+\newtheorem{remark}{\indent 注}[section]
+\newenvironment{solution}{\begin{proof}[\indent\bf 解]}{\end{proof}}
+\renewcommand{\proofname}{\indent\bf 证明}
+
+\renewcommand\theenumi{\roman{enumi}}
+
+\NewDocumentCommand{\dotunderline}{m}{%
+  \settowidth{\dimen0}{#1}%
+  \makebox[\dimen0]{%
+    \ooalign{%
+      #1\cr
+      \hidewidth\ensuremath{\underbrace{\rule[-1ex]{\dimen0}{0.4pt}}_{\makebox[0pt]{\hspace{0.1em}$\cdot$\hspace{0.1em}}}\hidewidth}%
+    }%
+  }%
+}
+
+%\newcommand{\cplus}{\raisebox{-1.1ex}{+}}
+\newcommand{\cplus}{\oplus}
+
+
+\begin{document}
+
+\maketitle
+% \section{祖冲之的约率 $\frac{22}{7}$ 和 密率 $\frac{355}{113}$}
+% 祖冲之是我国伟大的数学家。他生于公元429年，卒于公元500年。他的儿子祖暅和他的孙子祖皓，也都是数学家，善算历。
+
+% 关于圆周率$\pi$，祖冲之的贡献有二：
+% \begin{enumerate}
+% \item\label{item:1} $3.1415926<\pi<3.1415927$；
+% \item\label{item:2} 他用 $\frac{22}{7}$ 作为约率，$\frac{355}{113}$ 作为密率。
+% \end{enumerate}
+% 这些结果是刘微割圆术之后的重要发展。刘徽从圆内接
+% 正六边形起算，令边数一倍一倍地增加，即12、24、48,96、 ……
+% 1536, …… ，因而逐个算出六边形、十二边形、二十四边形 ……
+% 的面积，这些数植逐步地逼近圆周率。刘微方法的特点，是得
+% 出一批一个大于一个的数值，这样来一步一步地逼近圆周率。
+% 这方法是可以无限精密地逼近圆周率的，但每一次都比圆周率小。
+
+% 祖冲之的结果(~\ref{item:1})从上下两方面指出了圆周率的误差范
+% 围。这是大家都容易看到的事实，因此在这本小书中不预备
+% 多讲。我只准备着重地谈一谈结果(~\ref{item:2})。在谈到$\frac{355}{133}$的时候，一定能从
+% \begin{equation*}
+% \frac{355}{113}  = 3.1415929\cdots
+% \end{equation*}
+% 看出，他所提出的 $\frac{355}{113}$ 惊人精密的接近于圆周率，准确到六位小数。也有人会指出这一发现比欧洲人早了一千年。因为德
+% 国人奥托（Valenlinus Otto）在1573年才发现这个分数。如果更深入地想一下,就会发现$\frac{22}{7}$和$\frac{355}{113}$的意义还远不止这
+% 些。有些人认为那时的人们喜欢用分数来计算。这样看问题未免太简单了。其实其中孕育着不少道理，这道理可以用来推算天文上的很多现象。无怪乎祖冲之祖孙三代都是算历的专家。这个约率和密率，提出了“用有理数最佳逼近实数”的问題。“逼近”这个概念在近代数学中是十分重要的。
+
+\section{人造行星将于2113年又接近地球}
+
+%我们暂且把“用有理数最佳逼近实数”的问题放一放,而再提一个事实：
+
+% \noindent
+% \begin{minipage}[t]{0.3\textwidth} % Left column: 30% of the text width
+%     \includegraphics[width = 0.8 \textwidth]{sun.png}
+% \end{minipage}
+% \begin{minipage}[t]{0.6\textwidth} % Right column: 65% of the text width
+%     
+% \end{minipage}
+
+\columnratio{0.3}
+\begin{paracol}{2} % 3:1 ratio (left:right)
+  \begin{leftcolumn}
+  \includegraphics[width= 0.8 \linewidth]{sun.png}
+  \end{leftcolumn}
+
+\begin{rightcolumn}
+  1959年苏联第一次发射了一个（绕太阳公转的）人造行星，报上说：苏联某专家算出，五年后这个人造行星又将接近地球，在2113年又将非常接近地球，这是怎样算出来的？难不难，深奥不深奥？我们中学生能懂不能懂？我说能懂的：不需要专家，中学生是可以学懂这个方法的。
+\end{rightcolumn}
+
+\end{paracol}
+
+先看为什么五年后这个人造行星会接近地球。报上登过这个人造行星绕太阳一周的时间是450天。如果以地球绕日一周360天算，地球走五圈和人造行星走四圈不都是1800天吗？因此五年后地球和人造行星将相互接近。至于为什么在2113年这个人造行星和地球又将非常接近? 我们将在第三节中说明。
+
+再看五圈是怎样算出来的。 任何中学生都会回答：这是由于约分：
+\begin{equation*}
+\frac{450}{360} = \frac{5}{4}
+\end{equation*}
+而得来的，或者这是求$450$和$360$的最小公倍数而的来的。它们的最小公倍数是$1800$，而$\frac{1800}{360} = 5, \frac{1800}{450} = 4$；也就是当地球绕太阳$5$圈时，人造行星恰好回到了原来的位置。求最小公倍数在这儿找到了用场。在进入下节介绍辗转相除法之前，我们再说一句，地球绕太阳并不是$360$天一周，而是$365 \frac{1}{4}$天。因而仅仅学会求最小公倍数法还不足以应付这一问题，还需更上一层楼。
+
+【停！】
+\section{辗转相除法和连分数}
+我们还是循序渐进吧。先从简单的（原来在小学或初中一年级学到的）辗转相除法讲起。但我们采用较高的形式，采用学过代数学的同学能理解的形式。
+
+给两个正整数$a$和$b$，用$b$除$a$得商$a_0$，余数$r$，写成式子
+\begin{equation}
+\label{eq:3}
+a = a_0b + r \quad 0\le r < b
+\end{equation}
+\cemph{这是最基本的式子}。如果$r$等于$0$，那么$b$可以除尽$a$（记作$b|a$），而$a,b$的最大公约数就是$b$。
+
+如果$r\ne 0$，再用$r$除$b$，得商$a_1$，余数$r_1$，即
+\begin{equation}
+\label{eq:1}
+b = a_1 r + r_1 \quad 0\le r_1<r
+\end{equation}
+如果$r_1 = 0$，那么$r$除尽$b$，由~\eqref{eq:3}它也除尽$a$。又任何一个除尽$a$和$b$的数，由~\eqref{eq:1}也一定除尽$r$。因此，$r$是$a,b$的最大公约数。
+
+【停！】
+
+如果$r_1\ne 0$，用$r_1$除$r$，得商$a_2$，余数$r_2$，即
+\begin{equation}
+\label{eq:2}
+r = a_2r_1 + r_2
+\end{equation}
+如果$r_2=0$，那么由~\eqref{eq:1} $r_1$是$b,r$的公约数，由~\eqref{eq:3}它也是$a,b$的公约数。反之，如果一数除得尽$a,b$，那由~\eqref{eq:3}它一定除得尽$b,r$，由~\eqref{eq:1}它一定除得尽$r,r_1$，所以$r_1$是$a,b$的最大公约数。
+
+如果$r_2\ne 0$，再用$r_2$除$r_1$，如法进行。由于$b>r>r_1>r_2>\cdots(\ge0)$逐步小下来，因此经过有限步骤后一定可以找出$a,b$的最大公约数来（最大公约数可以是$1$）。这就是 \textbf{辗转相除法}，或称 \textbf{欧几里得算法}。这个方法是我们这本小册子的灵魂。
+
+【停！】
+
+\begin{example}
+  求$360$和$450$的最大公约数。
+  \begin{align*}
+    450 = & 1 \times 360 + 90\\
+    360 = & 4 \times 90
+  \end{align*}
+  所以$90$是$360,450$的最大公约数。由于最小公倍数等于两数相乘再除以最大公约数，因此二数的最小公倍数等于
+\begin{equation*}
+360\times450\div 90 = 1800
+\end{equation*}
+因而得出上节的结果。
+\end{example}
+
+\begin{example}
+  \label{sec:2}
+  求 $42897$和 $18644$的最大公约数。
+  \begin{align*}
+    42897 = & 2 \times 18644 + 5609\\
+    18644 = & 3 \times 5609 + 1817\\
+    5609 = & 3 \times 1817 + 158\\
+    1817 = & 11 \times 158 + 79\\
+    158 = & 2 \times 79
+  \end{align*}
+因此最大公约数等于 $79$。
+\end{example}
+
+计算的草式如下：
+
+\begin{table}[h]
+ \centering
+\begin{tabular}{r|l|l}
+42897 &    &       \\
+$-$ 37288 & 2  & 18644 \\ \cline{1-1}
+5609  & 3  & 16827 \\ \cline{3-3} 
+5451  & 3  & 1817  \\ \cline{1-1}
+158   & 11 & 1738  \\ \cline{3-3} 
+158   & 2  & 79    \\ \cline{1-1}
+0     &    &      
+\end{tabular}
+\end{table}
+
+【停！】
+
+例 \ref{sec:2} 的计算也可以写成为
+\begin{align*}
+  \frac{42897}{18644} = & 2 + \cfrac{5609}{18644} = 2 + \cfrac{1}{\cfrac{18644}{5609}}\\
+  = & 2 + \cfrac{1}{3 + \cfrac{1817}{5609}} = 2 + \cfrac{1}{3+\cfrac{1}{3 + \cfrac{158}{1817}}}\\
+  = & 2 + \cfrac{1}{3 + \cfrac{1}{3 + \cfrac{1}{11+\cfrac{79}{158}}}}\\
+  = & 2 + \cfrac{1}{3 + \cfrac{1}{3 + \cfrac{1}{11+\cfrac{1}{2}}}}
+\end{align*}
+这样的繁分数称为 \textbf{连分数}。
+
+【停！】
+
+为了节省篇幅，我们把它写成
+\begin{equation*}
+2 + \frac{1}{3} \cplus \frac{1}{3} \cplus \frac{1}{11} \cplus \frac{1}{2}
+\end{equation*}
+注意$2,3,3,11,2$都是草式中间一行的数字。倒算回去，得
+\begin{align*}
+  2 + \frac{1}{3} \cplus \frac{1}{3} \cplus \frac{1}{11} \cplus \frac{1}{2} = & 2 + \frac{1}{3} \cplus \frac{1}{3} \cplus \frac{2}{23}\\
+  = & 2 + \frac{1}{3} \cplus \frac{23}{71} = 2 + \frac{71}{236} = \frac{543}{236}
+\end{align*}
+（其中$\oplus$ 表示连分数加法。例如，$\frac{1}{2}\oplus \frac{1}{3} = \frac{1}{2 + (1/3)} = \frac{1}{7/3} = \frac{3}{7}$。）这就是原来分数的既约分数。
+
+【停！】
+
+依次截断得
+$$
+2,\quad 2+ \frac{1}{3} = \frac{7}{3}, \quad 2 + \frac{1}{3} \cplus \frac{1}{3} = \frac{23}{10}, \quad 2 + \frac{1}{3} \cplus \frac{1}{3} \cplus \frac{1}{11} = \frac{260}{113} 
+$$
+这些分数称为$\frac{543}{236}$的\textbf{渐近分数}。我们看到第一个渐近分数比 $\frac{543}{236}$小，第二个渐近分数比它大，第三个又比它小，……
+
+为什么叫做渐近分数？例如，我们看一下分母不超过$10$的分数和$\frac{543}{236}$相接近的情况。
+
+分母是$1,2,3,4,5,6,7,8,9,10$，而最接近于$\frac{543}{236}$的分数是
+\begin{equation*}
+\frac{2}{1}, \frac{5}{2}, \frac{7}{3}, \frac{9}{4}, \frac{12}{5}, \frac{14}{6}, \frac{16}{7}, \frac{19}{8}, \frac{21}{9}, \frac{23}{10}
+\end{equation*}
+取二位小数，它们分别等于
+\begin{equation*}
+2.00, 2.50, 2.33, 2.25, 2.40, 2.33, 2.29, 2.38, 2.33, 2.30.
+\end{equation*}
+和$\frac{543}{236} = 2.30$ 相比较，可以发现其中有几个特殊的既约分数
+\begin{equation*}
+\frac{2}{1}, \frac{5}{2}, \frac{7}{3}, \frac{16}{7}, \frac{23}{10}
+\end{equation*}
+在上面这一列数中，这几个数比它们以前的数都更接近于$\frac{543}{236}$。而其中$\frac{2}{1}, \frac{7}{3}, \frac{23}{10}$ 都是由连分数截断算出来的数，即它们都是渐近分数。
+
+【停！】
+
+我们现在再证明：分母小于$113$的分数里面，没有一个比$\frac{260}{113}$更接近于$\frac{543}{236}$了，要证明这点很容易，首先
+\begin{equation*}
+\left|\frac{543}{236} - \frac{260}{113}\right| = \frac{1}{236\times113}
+\end{equation*}
+命$\frac{a}{b}$是任意分母小于$113$的分数，那么
+\begin{equation*}
+\left|\frac{543}{236} - \frac{a}{b}\right| = \frac{|543b - 236a|}{236\times b} \ge \frac{1}{236\times b} > \frac{1}{236\times113}
+\end{equation*}
+
+【停！】
+
+\section{答第一节的问}
+现在我们来回答第一节里的问题：怎样算出人造行星2113年又将非常接近地球？
+
+人造卫星绕日一周需 $450$ 天，地球绕日一周是 $365 \frac{1}{4}$天。如果以$\frac{1}{4}$天做单位，那么人造行星和地球绕日一周的时间各为 $1800$ 和 $1461$ 个单位。如上节所讲的方法，
+\begin{table}[h]
+  \centering
+\begin{tabular}{r|l|l}
+1800 &   &      \\
+1461 & 1 & 1461 \\ \cline{1-1}
+339  & 4 & 1356 \\ \cline{3-3} 
+315  & 3 & 105  \\ \cline{1-1}
+24   & 4 & 96   \\ \cline{3-3} 
+18   & 2 & 9    \\ \cline{1-1}
+6    & 1 & 6    \\ \cline{3-3} 
+6    & 2 & 3    \\ \cline{1-1}
+0    &   &     
+\end{tabular}
+\end{table}
+
+即得连分数
+\begin{equation*}
+1 + \frac{1}{4} \cplus \frac{1}{3} \cplus \frac{1}{4} \cplus \frac{1}{2} \cplus \frac{1}{1} \cplus \frac{1}{2}
+\end{equation*}
+
+由此得渐近分数
+\begin{align*}
+  1, & 1 + \frac{1}{4} = \frac{5}{4}, \quad 1 + \frac{1}{4} \cplus \frac{1}{3} = \frac{16}{13}, \quad 1 + \frac{1}{4} \cplus  \frac{1}{3} \cplus \frac{1}{4} = \frac{69}{56},\\
+  & 1 + \frac{1}{4} \cplus  \frac{1}{3} \cplus  \frac{1}{4} \cplus  \frac{1}{2} = \frac{154}{125}, \cdots
+\end{align*}
+
+【停！】
+
+第一个渐近分数说明了地球5圈，人造卫星4圈，即5年后人造卫星和地球接近。但地球16圈，人造卫星13圈更接近些；地球69圈，人造卫星56圈还要接近些；而地球154圈，人造卫星125圈又要更接近些。这就是报上所登的苏联专家所算出的数字了，这也就是在
+\begin{equation*}
+1959 + 154 = 2113
+\end{equation*}
+年，人造卫星将非常接近地球的道理。
+
+当然，由于连分数还可以继续做下去，所以我们可以更精密地算下去；但是因为$450$天和$365 \frac{1}{4}$ 天这两个数字本身并不很精确，所以再算下去也没有太大的必要了。但读者不妨作为习题再算上一项。
+
+【停！】
+
+\section{习题}
+\begin{enumerate}
+\item 请根据你的理解，简述为什么苏联卫星将于2113年接近地球。
+\item 在刚刚的阅读过程中，你认为自己使用了哪些阅读策略？
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
